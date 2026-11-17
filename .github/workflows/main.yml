@@ -42,35 +42,22 @@ jobs:
 
       # 3. 메인 타깃 및 Framework 무서명 빌드
 
+
       - name: Build Unsigned App
-
         run: |
-
-          xcodebuild -project Unity-iPhone.xcodeproj \
-
+          xcodebuild \
+            -project Unity-iPhone.xcodeproj \
             -scheme Unity-iPhone \
-
             -sdk iphoneos \
-
             -configuration Release \
-
             -derivedDataPath ./build_output \
-
             CODE_SIGNING_ALLOWED=NO \
-
             CODE_SIGNING_REQUIRED=NO \
-
             CODE_SIGN_IDENTITY="" \
-
-            CODE_SIGN_ENTITLEMENTS="" \
-
-            CODE_SIGNING_INJECT_BASE_ENTITLEMENTS=NO \
-
             DEBUG_INFORMATION_FORMAT=dwarf \
-
             GCC_GENERATE_DEBUGGING_SYMBOLS=NO \
+            build
 
-            clean build
 
 
 
